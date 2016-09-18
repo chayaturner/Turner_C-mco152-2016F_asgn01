@@ -2,9 +2,9 @@ package asgn01;
 
 public class Adder {
 
-	int first;
-	int second;
-	int sum;
+	private int first;
+	private int second;
+	private int sum;
 
 	public Adder(int first, int second) {
 		this.first = first;

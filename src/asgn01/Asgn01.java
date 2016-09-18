@@ -8,6 +8,7 @@ public class Asgn01 {
 		int firstNum = 0;
 		int secondNum = 0;
 		int sum = 0;
+		int difference = 0;
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Enter two numbers:");
@@ -19,10 +20,13 @@ public class Asgn01 {
 		secondNum = scanner.nextInt();
 
 		Adder adder = new Adder(firstNum, secondNum);
+		Subtractor subtractor = new Subtractor(firstNum, secondNum);
 
+		// display sum and difference
 		sum = adder.add();
-		System.out.println("Sum: ");
-		System.out.println(sum);
+		System.out.println("Sum: " + sum);
+		difference = subtractor.subtract();
+		System.out.println("Difference: " + difference);
 
 		scanner.close();
 	}

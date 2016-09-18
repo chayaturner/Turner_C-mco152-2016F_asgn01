@@ -7,27 +7,36 @@ public class Asgn01 {
 	public static void main(String[] args) {
 		int firstNum = 0;
 		int secondNum = 0;
-		int sum = 0;
-		int difference = 0;
 		Scanner scanner = new Scanner(System.in);
+		int choice = 0;
+		int quit = 0;
 
-		System.out.println("Enter two numbers:");
-		System.out.println("Number 1: ");
+		do {
+			System.out.println("Enter two numbers:");
+			System.out.println("Number 1: ");
+			firstNum = scanner.nextInt();
+			System.out.println("Number 2: ");
+			secondNum = scanner.nextInt();
 
-		firstNum = scanner.nextInt();
+			System.out.println("Choose: \n 1. Add numbers \n 2. Subtract numbers");
+			choice = scanner.nextInt();
+			Calculator calculator = new Calculator(firstNum, secondNum);
 
-		System.out.println("Number 2: ");
-		secondNum = scanner.nextInt();
+			if (choice == 1) {
+				System.out.println("Sum: " + calculator.add() + "\n");
+			} else if (choice == 2) {
+				System.out.println("Difference: " + calculator.subtract() + "\n");
+			} else {
+				System.out.println("Incorrect choice");
+			}
 
-		Adder adder = new Adder(firstNum, secondNum);
-		Subtractor subtractor = new Subtractor(firstNum, secondNum);
+			System.out.println("Would you like to calculate more numbers?");
+			System.out.println("Enter 1 to continue or 2 to quit:");
+			quit = scanner.nextInt();
 
-		// display sum and difference
-		sum = adder.add();
-		System.out.println("Sum: " + sum);
-		difference = subtractor.subtract();
-		System.out.println("Difference: " + difference);
+		} while (quit != 2);
 
+		System.out.println("\nGoodbye!");
 		scanner.close();
 	}
 
